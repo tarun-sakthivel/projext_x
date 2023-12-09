@@ -1,0 +1,34 @@
+name: project_x
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.0-42.1.beta <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon_assets/Bar.png
+    - assets/icon_assets/threebar.png
+    - assets/icon_assets/
+    - assets/image_assets/designbackground.png
+  fonts:
+    - family: Inter
+      fonts:
+      - asset: fonts\Inter-VariableFont_slnt,wght.ttf
+        weight: 900
+    
+    - family: jetBrainsMono
+      fonts:
+      - asset: fonts\JetBrainsMono-VariableFont_wght.ttf
+        weight: 900
