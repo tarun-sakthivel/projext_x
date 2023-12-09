@@ -22,6 +22,8 @@ flutter:
     - assets/icon_assets/threebar.png
     - assets/icon_assets/
     - assets/image_assets/designbackground.png
+    - assets/image_assets/interview.png
+    - assets/image_assets/grow.png
   fonts:
     - family: Inter
       fonts:
