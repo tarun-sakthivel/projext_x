@@ -67,77 +67,132 @@ class _HomemainboardState extends State<Homemainboard> {
            endIndent: 0,
            color: Kgreylinecolor,
           ),
-        SizedBox(
-          height: 20,
-      ),
-          Text("Features",style:TextStyle(fontFamily: "Inter",
-          fontSize: 20,
-          fontWeight: FontWeight.w500)),
-          Padding(
-            padding: const EdgeInsets.only(top:15,bottom: 15),
-            child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+          Expanded(
+            child: Container(
+              height:double.infinity,
+              color:Colors.grey,
+
+              child:SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 physics: BouncingScrollPhysics(),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FeaturesButton(startcolor: Color.fromARGB(255, 242, 229, 95),
-                    endcolor:Color.fromARGB(255, 244, 141, 190) ,
-                    subtext: "Find Your",
-                    maintext: "Reports",
-                    imagepath:"assets/icon_assets/report.png",
-                    operation: (){
-                        //NAVIGATOR
-                    }
-                   ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 138, 86, 249),
-                    endcolor:Color.fromARGB(255, 89, 86, 253) ,
-                    subtext: "Find Your",
-                    maintext: "Jobs",
-                    imagepath:"assets/icon_assets/job_user.png",
-                    operation: (){
-                      //NAVIGATOR
-                    }
-                   ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
-                    subtext: "Trending \u{1F525}",
-                    maintext: "Jobs News",
-                    imagepath:"assets/icon_assets/News.png",
-                    operation: (){
-                      //NAVIGATOR
-                    }
-                   ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
-                    subtext: "Trending \u{1F525}",
-                    maintext: "Jobs News",
-                    imagepath:"assets/icon_assets/News.png",
-                    operation: (){
-                      //NAVIGATOR
-                    }
-                   ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
-                    subtext: "Trending \u{1F525}",
-                    maintext: "Jobs News",
-                    imagepath:"assets/icon_assets/News.png",
-                    operation: (){
-                      //NAVIGATOR
-                    }
-                   ),
-                   
-          
-                   
+                    Container(
+                      height:400,
+                      width:double.infinity,
+                      color:Kgreylinecolor,
+
+                      child:Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex:2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Features"),
+                                SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          FeaturesButton(startcolor: Color.fromARGB(255, 242, 229, 95),
+                          endcolor:Color.fromARGB(255, 244, 141, 190) ,
+                          subtext: "Find Your",
+                          maintext: "Reports",
+                          imagepath:"assets/icon_assets/report.png",
+                          operation: (){
+                              //NAVIGATOR
+                          }
+                         ),
+                         FeaturesButton(startcolor: Color.fromARGB(255, 138, 86, 249),
+                          endcolor:Color.fromARGB(255, 89, 86, 253) ,
+                          subtext: "Find Your",
+                          maintext: "Jobs",
+                          imagepath:"assets/icon_assets/job_user.png",
+                          operation: (){
+                            //NAVIGATOR
+                          }
+                         ),
+                         FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
+                          endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                          subtext: "Trending \u{1F525}",
+                          maintext: "Jobs News",
+                          imagepath:"assets/icon_assets/News.png",
+                          operation: (){
+                            //NAVIGATOR
+                          }
+                         ),
+                         FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
+                          endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                          subtext: "Trending \u{1F525}",
+                          maintext: "Jobs News",
+                          imagepath:"assets/icon_assets/News.png",
+                          operation: (){
+                            //NAVIGATOR
+                          }
+                         ),
+                         FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
+                          endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                          subtext: "Trending \u{1F525}",
+                          maintext: "Jobs News",
+                          imagepath:"assets/icon_assets/News.png",
+                          operation: (){
+                            //NAVIGATOR
+                          }
+                         ),
+                         
+            
+                         
+                          
+                        
+                        
+                        ],
+                      ),
+                    ),
+                                
+                              ],
+                            )
+                          ),
+                          Expanded(
+                            flex:1,
+                            child: Container(
+                                color:const Color.fromARGB(255, 1, 14, 24),
+                          
+                              
+                            ),
+                          )
+                        ],
+
+                      ),
+                    ),
+
+                    Container(
+                      height:550,
+                      width:double.infinity,
+                      color:Colors.amber,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        
+                      ],
+                    )
                     
-                  
-                  
                   ],
                 ),
-              ),
-          ),
-        
+              )
+            )),
+         
+          
         ],
       )
     );
