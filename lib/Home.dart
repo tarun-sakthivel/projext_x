@@ -20,6 +20,8 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(20.0),
         child: Row(
           children: [
+
+            
            Expanded(
             flex:1,
             child: Container(

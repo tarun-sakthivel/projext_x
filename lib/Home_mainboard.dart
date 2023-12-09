@@ -176,12 +176,15 @@ class FeaturesButton extends StatelessWidget {
           width: 300,
           height:150,
           decoration: BoxDecoration(
+            
             gradient: LinearGradient(colors: [startcolor, endcolor],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           stops: [0.0, 1.0],
           tileMode: TileMode.clamp,),
           borderRadius: BorderRadius.circular(20),
+
+          
           ),
     
           //content inside the container
