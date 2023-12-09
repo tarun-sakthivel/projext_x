@@ -5,6 +5,8 @@ import 'constants.dart';
 
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   
 
   @override
@@ -36,8 +38,8 @@ class _HomeState extends State<Home> {
                 height:double.infinity,
                 decoration: BoxDecoration(color:Kmainboard,
                 borderRadius: KMyborder),
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(25.0),
                   child: Homemainboard(),
                 ),
                 

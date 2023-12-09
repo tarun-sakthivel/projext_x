@@ -5,18 +5,18 @@ import 'Home.dart';
 
 
 void main() {
-  runApp( MainApp());
+  runApp( const MainApp());
 }
 
 class MainApp extends StatelessWidget {
-   MainApp({super.key});
+   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       color: Kbackgroundcolor,
-      home: Scaffold(
+      home: const Scaffold(
         body: Home(),
       ),
     );

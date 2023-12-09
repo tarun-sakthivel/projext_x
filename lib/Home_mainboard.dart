@@ -3,6 +3,8 @@ import "package:project_x/constants.dart";
 
 
 class Homemainboard extends StatefulWidget {
+  const Homemainboard({super.key});
+
   @override
   _HomemainboardState createState() => _HomemainboardState();
 }
@@ -67,23 +69,23 @@ class _HomemainboardState extends State<Homemainboard> {
            endIndent: 0,
            color: Kgreylinecolor,
           ),
-        SizedBox(
+        const SizedBox(
           height: 20,
       ),
-          Text("Features",style:TextStyle(fontFamily: "Inter",
+          const Text("Features",style:TextStyle(fontFamily: "Inter",
           fontSize: 20,
           fontWeight: FontWeight.w500)),
           Padding(
             padding: const EdgeInsets.only(top:15,bottom: 15),
             child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    FeaturesButton(startcolor: Color.fromARGB(255, 242, 229, 95),
-                    endcolor:Color.fromARGB(255, 244, 141, 190) ,
+                    FeaturesButton(startcolor: const Color.fromARGB(255, 242, 229, 95),
+                    endcolor:const Color.fromARGB(255, 244, 141, 190) ,
                     subtext: "Find Your",
                     maintext: "Reports",
                     imagepath:"assets/icon_assets/report.png",
@@ -91,8 +93,8 @@ class _HomemainboardState extends State<Homemainboard> {
                         //NAVIGATOR
                     }
                    ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 138, 86, 249),
-                    endcolor:Color.fromARGB(255, 89, 86, 253) ,
+                   FeaturesButton(startcolor: const Color.fromARGB(255, 138, 86, 249),
+                    endcolor:const Color.fromARGB(255, 89, 86, 253) ,
                     subtext: "Find Your",
                     maintext: "Jobs",
                     imagepath:"assets/icon_assets/job_user.png",
@@ -100,8 +102,8 @@ class _HomemainboardState extends State<Homemainboard> {
                       //NAVIGATOR
                     }
                    ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                   FeaturesButton(startcolor: const Color.fromARGB(255, 249, 19, 19),
+                    endcolor:const Color.fromARGB(255, 249, 70, 167) ,
                     subtext: "Trending \u{1F525}",
                     maintext: "Jobs News",
                     imagepath:"assets/icon_assets/News.png",
@@ -109,8 +111,8 @@ class _HomemainboardState extends State<Homemainboard> {
                       //NAVIGATOR
                     }
                    ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                   FeaturesButton(startcolor: const Color.fromARGB(255, 249, 19, 19),
+                    endcolor:const Color.fromARGB(255, 249, 70, 167) ,
                     subtext: "Trending \u{1F525}",
                     maintext: "Jobs News",
                     imagepath:"assets/icon_assets/News.png",
@@ -118,8 +120,8 @@ class _HomemainboardState extends State<Homemainboard> {
                       //NAVIGATOR
                     }
                    ),
-                   FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                    endcolor:Color.fromARGB(255, 249, 70, 167) ,
+                   FeaturesButton(startcolor: const Color.fromARGB(255, 249, 19, 19),
+                    endcolor:const Color.fromARGB(255, 249, 70, 167) ,
                     subtext: "Trending \u{1F525}",
                     maintext: "Jobs News",
                     imagepath:"assets/icon_assets/News.png",
@@ -155,7 +157,7 @@ class FeaturesButton extends StatelessWidget {
   late String maintext;
   late String imagepath;
   late Function() operation;
-  FeaturesButton({
+  FeaturesButton({super.key, 
    required this.startcolor,
    required this.endcolor,
    required this.subtext,
@@ -179,7 +181,7 @@ class FeaturesButton extends StatelessWidget {
             gradient: LinearGradient(colors: [startcolor, endcolor],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          stops: [0.0, 1.0],
+          stops: const [0.0, 1.0],
           tileMode: TileMode.clamp,),
           borderRadius: BorderRadius.circular(20),
           ),
@@ -195,8 +197,8 @@ class FeaturesButton extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(subtext,style:TextStyle(fontSize:18,fontWeight: FontWeight.w400,color: Colors.black)),
-                    Text(maintext,style:TextStyle(fontSize:32,fontWeight: FontWeight.w800,color: const Color.fromARGB(255, 255, 255, 255))),
+                    Text(subtext,style:const TextStyle(fontSize:18,fontWeight: FontWeight.w400,color: Colors.black)),
+                    Text(maintext,style:const TextStyle(fontSize:32,fontWeight: FontWeight.w800,color: Color.fromARGB(255, 255, 255, 255))),
                   ],
                 ),
                 Expanded(
