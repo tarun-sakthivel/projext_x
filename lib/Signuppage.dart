@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
+import 'package:project_x/techinterviewPage.dart';
 
 class Signuppage extends StatefulWidget {
   const Signuppage({super.key});
@@ -33,23 +34,23 @@ class _SignuppageState extends State<Signuppage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Image(
+                    const Image(
                       height: 320,
                       width: 260,
                       image: AssetImage('assets/image_assets/INTERVIEW2.png'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     screenwidth < 200
-                        ? Text(
+                        ? const Text(
                             ' ',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           )
-                        : Text(
+                        : const Text(
                             'INTERVIEW',
                             style: TextStyle(
                                 fontFamily: 'Inter',
@@ -57,19 +58,19 @@ class _SignuppageState extends State<Signuppage> {
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(255, 147, 132, 1)),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    SizedBox(
                       height: 120,
                       width: 290,
                       child: screenwidth < 200
-                          ? Text(
+                          ? const Text(
                               ' ',
                               style:
                                   TextStyle(fontSize: 15, color: Colors.black),
                             )
-                          : Expanded(
+                          : const Expanded(
                               child: Text(
                                 'Interviews, where practice breeds prowess. Elevate with intentional greatness. Craftsmanship honed in relentless pursuit. Dreams to reality, one answer at a time. Unleash your potential through deliberate practice. ',
                                 style: TextStyle(
@@ -81,7 +82,7 @@ class _SignuppageState extends State<Signuppage> {
                               ),
                             ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Expanded(
@@ -89,14 +90,14 @@ class _SignuppageState extends State<Signuppage> {
                       child: Container(
                         child: Center(
                           child: screenwidth < 200
-                              ? Text(
+                              ? const Text(
                                   ' ',
                                   style: TextStyle(
                                       fontFamily: 'Inter',
                                       fontSize: 1,
                                       fontWeight: FontWeight.w400),
                                 )
-                              : Text(
+                              : const Text(
                                   "Interviews forge prowess through \n         intentional practice.",
                                   style: TextStyle(
                                       color: Color.fromRGBO(
@@ -129,23 +130,23 @@ class _SignuppageState extends State<Signuppage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    Container(
+                    const SizedBox(
                       height: 240,
                       width: 350,
-                      child: const Image(
+                      child: Image(
                           fit: BoxFit.fill,
                           image: AssetImage('assets/image_assets/signin.png')),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     screenwidth <
                             100 // The conditions to avoid the render overflow of the Name textfield
-                        ? Text(
+                        ? const Text(
                             'Allignment error',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           )
-                        : Container(
+                        : SizedBox(
                             height: 90,
                             width: 400,
                             child: Column(
@@ -165,22 +166,22 @@ class _SignuppageState extends State<Signuppage> {
                                             color: Colors.black),
                                       ),
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Container(
                                   height: 52,
                                   width: 380,
                                   decoration: BoxDecoration(
-                                      color: Color.fromRGBO(232, 232, 232, 1),
+                                      color: const Color.fromRGBO(232, 232, 232, 1),
                                       borderRadius: BorderRadius.circular(35)),
                                   child: TextField(
                                     onChanged: (value) => name,
                                     obscureText: false,
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Name',
-                                        hintStyle: const TextStyle(
+                                        hintStyle: TextStyle(
                                             fontFamily: 'Inter', fontSize: 15),
                                         contentPadding: EdgeInsets.all(20)),
                                   ),
@@ -188,16 +189,16 @@ class _SignuppageState extends State<Signuppage> {
                               ],
                             ),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     screenwidth < 100
-                        ? Text(
+                        ? const Text(
                             'Allignment error',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           ) //This is condition used to avoid the render overflow of the email textfield
 
-                        : Container(
+                        : SizedBox(
                             height: 90,
                             width: 400,
                             child: Column(
@@ -217,7 +218,7 @@ class _SignuppageState extends State<Signuppage> {
                                             color: Colors.black),
                                       ),
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Container(
@@ -225,16 +226,16 @@ class _SignuppageState extends State<Signuppage> {
                                   height: 52,
                                   width: 380,
                                   decoration: BoxDecoration(
-                                      color: Color.fromRGBO(232, 232, 232, 1),
+                                      color: const Color.fromRGBO(232, 232, 232, 1),
                                       borderRadius: BorderRadius.circular(35)),
                                   child: TextField(
                                     onChanged: (value) => email,
                                     obscureText: false,
                                     keyboardType: TextInputType.emailAddress,
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: 'Email',
-                                        hintStyle: const TextStyle(
+                                        hintStyle: TextStyle(
                                             fontFamily: 'Inter', fontSize: 15),
                                         contentPadding: EdgeInsets.all(20)),
                                   ),
@@ -242,16 +243,16 @@ class _SignuppageState extends State<Signuppage> {
                               ],
                             ),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     screenwidth <
                             100 //This is the condition used to avoid the render overflow of the following password textfield
-                        ? Text(
+                        ? const Text(
                             'Allignment error',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           )
-                        : Container(
+                        : SizedBox(
                             height: 84,
                             width: 400,
                             child: Column(
@@ -273,7 +274,7 @@ class _SignuppageState extends State<Signuppage> {
                                         ),
                                       ),
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Expanded(
@@ -281,7 +282,7 @@ class _SignuppageState extends State<Signuppage> {
                                     height: 52,
                                     width: 380,
                                     decoration: BoxDecoration(
-                                        color: Color.fromRGBO(232, 232, 232, 1),
+                                        color: const Color.fromRGBO(232, 232, 232, 1),
                                         borderRadius:
                                             BorderRadius.circular(35)),
                                     child: TextField(
@@ -306,18 +307,23 @@ class _SignuppageState extends State<Signuppage> {
                                           hintStyle: const TextStyle(
                                               fontFamily: 'Inter',
                                               fontSize: 15),
-                                          contentPadding: EdgeInsets.all(20)),
+                                          contentPadding: const EdgeInsets.all(20)),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const techinterviewPage()));
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
                               const Color.fromRGBO(172, 118, 243, 1),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
+import 'package:project_x/techinterviewPage.dart';
 
 class Signinpage extends StatefulWidget {
   const Signinpage({super.key});
@@ -50,18 +51,18 @@ class _SigninpageState extends State<Signinpage> {
                           fontWeight: FontWeight.w400,
                           color: Color.fromRGBO(255, 147, 132, 1)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     screenwidth < 200
-                        ? Text(
+                        ? const Text(
                             'Allignment error',
                             style: TextStyle(
                                 fontSize: 15,
                                 color:
-                                    const Color.fromARGB(255, 255, 255, 255)),
+                                    Color.fromARGB(255, 255, 255, 255)),
                           )
-                        : Container(
+                        : const SizedBox(
                             height: 120,
                             width: 290,
                             child: Text(
@@ -112,17 +113,17 @@ class _SigninpageState extends State<Signinpage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    Container(
+                    const SizedBox(
                       height: 240,
                       width: 350,
-                      child: const Image(
+                      child: Image(
                           fit: BoxFit.fill,
                           image: AssetImage('assets/image_assets/signin.png')),
                     ),
                     const SizedBox(
                       height: 40,
                     ),
-                    Container(
+                    SizedBox(
                       //Email address text input textfield
                       height: 90,
                       width: 400,
@@ -143,7 +144,7 @@ class _SigninpageState extends State<Signinpage> {
                                       color: Colors.black),
                                 ),
                               ]),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Container(
@@ -151,16 +152,16 @@ class _SigninpageState extends State<Signinpage> {
                             height: 52,
                             width: 380,
                             decoration: BoxDecoration(
-                                color: Color.fromRGBO(232, 232, 232, 1),
+                                color: const Color.fromRGBO(232, 232, 232, 1),
                                 borderRadius: BorderRadius.circular(35)),
                             child: TextField(
                               onChanged: (value) => email,
                               obscureText: false,
                               keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                   border: InputBorder.none,
                                   hintText: 'Email',
-                                  hintStyle: const TextStyle(
+                                  hintStyle: TextStyle(
                                       fontFamily: 'Inter', fontSize: 15),
                                   contentPadding: EdgeInsets.all(20)),
                             ),
@@ -168,15 +169,15 @@ class _SigninpageState extends State<Signinpage> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     screenwidth < 200
-                        ? Text(
+                        ? const Text(
                             'Allignment error',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           )
-                        : Container(
+                        : SizedBox(
                             //Password text input textfield
                             height: 90,
                             width: 400,
@@ -197,14 +198,14 @@ class _SigninpageState extends State<Signinpage> {
                                             color: Colors.black),
                                       ),
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Container(
                                   height: 52,
                                   width: 380,
                                   decoration: BoxDecoration(
-                                      color: Color.fromRGBO(232, 232, 232, 1),
+                                      color: const Color.fromRGBO(232, 232, 232, 1),
                                       borderRadius: BorderRadius.circular(35)),
                                   child: TextField(
                                     onChanged: (value) => password,
@@ -227,17 +228,22 @@ class _SigninpageState extends State<Signinpage> {
                                         hintText: 'Password',
                                         hintStyle: const TextStyle(
                                             fontFamily: 'Inter', fontSize: 15),
-                                        contentPadding: EdgeInsets.all(20)),
+                                        contentPadding: const EdgeInsets.all(20)),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const techinterviewPage()));
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
                               const Color.fromRGBO(172, 118, 243, 1),

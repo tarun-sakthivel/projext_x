@@ -29,10 +29,10 @@ class _LoginpageState extends State<Loginpage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image(
+                    const Image(
                       image: AssetImage('assets/image_assets/grow.png'),
                     ),
-                    Text(
+                    const Text(
                       'PRACTICE',
                       style: TextStyle(
                           fontFamily: 'Inter',
@@ -40,10 +40,10 @@ class _LoginpageState extends State<Loginpage> {
                           fontWeight: FontWeight.w400,
                           color: Color.fromRGBO(255, 147, 132, 1)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    const SizedBox(
                       height: 120,
                       width: 290,
                       child: Text(
@@ -56,12 +56,12 @@ class _LoginpageState extends State<Loginpage> {
                             fontWeight: FontWeight.w400),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Expanded(
                       child: Container(
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             " greatness is cultivated through \n          intentional practice.",
                             style: TextStyle(
@@ -99,7 +99,7 @@ class _LoginpageState extends State<Loginpage> {
                             'Allignment error',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           )
-                        : Container(
+                        : SizedBox(
                             //Container for the alignment of the following statement and the sigin page router button
                             height: 90,
                             width: 400,
@@ -133,7 +133,7 @@ class _LoginpageState extends State<Loginpage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                Signinpage()));
+                                                const Signinpage()));
                                   },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: const Color.fromRGBO(
@@ -159,10 +159,10 @@ class _LoginpageState extends State<Loginpage> {
                               ],
                             ),
                           ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    Container(
+                    SizedBox(
                       height: 200,
                       width: 200,
                       child: Column(
@@ -218,7 +218,7 @@ class _LoginpageState extends State<Loginpage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Signuppage()));
+                                      builder: (context) => const Signuppage()));
                             },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor:
