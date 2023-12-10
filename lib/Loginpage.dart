@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_x/Signinpage.dart';
+import 'package:project_x/Signuppage.dart';
 import 'constants.dart';
 
 class Loginpage extends StatefulWidget {
@@ -11,6 +13,7 @@ class Loginpage extends StatefulWidget {
 class _LoginpageState extends State<Loginpage> {
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -56,19 +59,23 @@ class _LoginpageState extends State<Loginpage> {
                     SizedBox(
                       height: 30,
                     ),
-                    Center(
-                      child: Text(
-                        " greatness is cultivated through \n          intentional practice.",
-                        style: TextStyle(
-                            color: Color.fromRGBO(
-                              255,
-                              147,
-                              132,
-                              1,
-                            ),
-                            fontFamily: 'Inter',
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400),
+                    Expanded(
+                      child: Container(
+                        child: Center(
+                          child: Text(
+                            " greatness is cultivated through \n          intentional practice.",
+                            style: TextStyle(
+                                color: Color.fromRGBO(
+                                  255,
+                                  147,
+                                  132,
+                                  1,
+                                ),
+                                fontFamily: 'Inter',
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
                       ),
                     )
                   ],
@@ -87,137 +94,172 @@ class _LoginpageState extends State<Loginpage> {
                   children: <Widget>[
                     const Image(
                         image: AssetImage('assets/image_assets/interview.png')),
-                    const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'if',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(225, 255, 114, 94)),
+                    screenwidth < 280
+                        ? const Text(
+                            'Allignment error',
+                            style: TextStyle(fontSize: 15, color: Colors.black),
+                          )
+                        : Container(
+                            //Container for the alignment of the following statement and the sigin page router button
+                            height: 90,
+                            width: 400,
+                            child: Column(
+                              children: [
+                                const Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'if',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Color.fromARGB(
+                                                225, 255, 114, 94)),
+                                      ),
+                                      SizedBox(width: 8),
+                                      Text(
+                                        '(You have an account?){',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                            fontFamily: "Inter"),
+                                      ),
+                                    ]),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Signinpage()));
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color.fromRGBO(
+                                          232, 232, 232, 1),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(30))),
+                                  child: const SizedBox(
+                                    height: 40,
+                                    width: 100,
+                                    child: Center(
+                                      child: Text(
+                                        'Login',
+                                        style: TextStyle(
+                                            fontFamily: 'Inter',
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.black),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          SizedBox(width: 8),
-                          Text(
-                            '(You have an account?){',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Inter"),
-                          ),
-                        ]),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromRGBO(232, 232, 232, 1),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30))),
-                      child: const SizedBox(
-                        height: 40,
-                        width: 100,
-                        child: Center(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
                     SizedBox(
                       height: 5,
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 355,
-                        ),
-                        const Text(
-                          '}',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 355,
-                        ),
-                        Text(
-                          'else',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: "Inter",
-                              fontWeight: FontWeight.w400,
-                              color: Color.fromRGBO(255, 114, 94, 1)),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          '{',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromRGBO(232, 232, 232, 1),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30))),
-                      child: const SizedBox(
-                        height: 40,
-                        width: 100,
-                        child: Center(
-                          child: Text(
-                            'Signup',
-                            style: TextStyle(
-                                fontFamily: 'Inter',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black),
+                    Container(
+                      height: 200,
+                      width: 200,
+                      child: Column(
+                        children: [
+                          const Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                '}',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
                           ),
-                        ),
+                          const SizedBox(height: 20),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'else',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.w400,
+                                    color: Color.fromRGBO(255, 114, 94, 1)),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                '{',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Signuppage()));
+                            },
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    const Color.fromRGBO(232, 232, 232, 1),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30))),
+                            child: const SizedBox(
+                              height: 40,
+                              width: 100,
+                              child: Center(
+                                child: Text(
+                                  'Signup',
+                                  style: TextStyle(
+                                      fontFamily: 'Inter',
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                '}',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 355,
-                        ),
-                        const Text(
-                          '}',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ],
                     )
                   ],
                 ),
