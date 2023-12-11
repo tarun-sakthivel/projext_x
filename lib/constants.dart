@@ -11,6 +11,7 @@ Color Kgreylinecolor = const Color.fromARGB(255, 194, 194, 194);
 Color Kgreytextcolor = const Color.fromARGB(255, 186, 171, 171);
 TextStyle Ktitletextstyle = const TextStyle(fontFamily: "Inter",fontSize: 30,fontWeight: FontWeight.bold);
 TextStyle Kcommontextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w500);
+TextStyle Kresumetextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w800,color: Color.fromARGB(255, 104, 103, 103));
 
 BorderRadius KMyborder = BorderRadius.circular(10);
 
