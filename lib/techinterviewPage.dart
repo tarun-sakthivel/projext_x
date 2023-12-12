@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
@@ -12,6 +11,7 @@ class techinterviewPage extends StatefulWidget {
 class _techinterviewPageState extends State<techinterviewPage> {
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Kbackgroundcolor,
         body: Padding(
@@ -168,6 +168,7 @@ class _techinterviewPageState extends State<techinterviewPage> {
                               const SizedBox(
                                 width: 10,
                               ),
+
                               const Expanded(
                                 child: SizedBox(
                                   height: 330,
@@ -197,14 +198,17 @@ class _techinterviewPageState extends State<techinterviewPage> {
                                   const SizedBox(
                                     height: 50,
                                   ),
-                                  Text(
-                                    'Elevate your tech interviews with our cutting-edge\n AI interview app! Seamlessly blend general questions,\n fundamental projects, and technical inquiries to assess\n candidates skills comprehensively. Revolutionize \n       your hiring process for a tech-savvy future.',
-                                    style: TextStyle(
-                                        fontFamily: 'Inter',
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w800,
-                                        color: Kblacktextcolor),
-                                  ),
+                                  screenwidth < 960
+                                      ? Text(
+                                          'Select any one of the \n options given below')
+                                      : Text(
+                                          'Elevate your tech interviews with our cutting-edge\n AI interview app! Seamlessly blend general questions,\n fundamental projects, and technical inquiries to assess\n candidates skills comprehensively. Revolutionize \n       your hiring process for a tech-savvy future.',
+                                          style: TextStyle(
+                                              fontFamily: 'Inter',
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w800,
+                                              color: Kblacktextcolor),
+                                        ),
                                   const SizedBox(
                                     height: 45,
                                   ),
@@ -213,17 +217,28 @@ class _techinterviewPageState extends State<techinterviewPage> {
                             ],
                           ),
                           const SizedBox(
-                            height: 120,
+                            height: 55,
+                          ),
+                          Text(
+                            'Choose the interview type ?',
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(
+                            height: 20,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Flexible(
+                              Container(
+                                //This is the conatiner that contains navigator button for the text based interview type
                                 child: MyElevatedButton(
-                                  onPressed:
-                                      () {},
-                                  width: 260, //Place to set the router to the text based page
+                                  onPressed: () {},
+                                  width:
+                                      260, //Place to set the router to the text based page
                                   child: const Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -244,7 +259,58 @@ class _techinterviewPageState extends State<techinterviewPage> {
                                     ],
                                   ),
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                //space between the two buttons
+                                width: 50,
+                              ),
+                              Container(
+                                //This is the container that contains the button for the voice and text navigator button
+                                child: MyElevatedButton(
+                                  onPressed: () {},
+                                  width:
+                                      260, //Place to set the router to the voice and text based page
+                                  child: const Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Video and Voice \n        based',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Inter',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      SizedBox(
+                                        width: 2,
+                                      ),
+                                      Image(
+                                          image: AssetImage(
+                                              'assets/image_assets/voice.png'))
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 300,
+                              ),
+                              Flexible(
+                                child: Text(
+                                  'Recommended',
+                                  style: TextStyle(
+                                      fontSize: 23,
+                                      fontFamily: 'Inter',
+                                      color: Color.fromRGBO(157, 157, 157, 1)),
+                                ),
+                              ),
                             ],
                           )
                         ],
