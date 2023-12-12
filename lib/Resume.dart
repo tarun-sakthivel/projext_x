@@ -159,7 +159,8 @@ DateTime _dateTime = DateTime.now();
               flex: 4,
               child: Container(
                 height: double.infinity,
-                color: Kmainboard,
+                
+                decoration: BoxDecoration(color: Kmainboard,borderRadius: KMyborder),
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
