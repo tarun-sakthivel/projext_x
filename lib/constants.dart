@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 String UserName = "Tarun";
 String projectName  = "ProjectX";
 Color  Kbackgroundcolor = const Color.fromARGB(255, 29, 29, 29);
@@ -13,6 +16,18 @@ TextStyle Ktitletextstyle = const TextStyle(fontFamily: "Inter",fontSize: 30,fon
 TextStyle Kcommontextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w500);
 TextStyle Kresumetextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w800,color: Color.fromARGB(255, 104, 103, 103));
 
+//profile image for the user 
+//picking the image from the file using the some modules
+final ImagePicker _picker = ImagePicker();
+
+
+chooseImages()async{
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    if (image !=null){
+      
+        final File _image = File(image.path);
+     
+    }}
 BorderRadius KMyborder = BorderRadius.circular(10);
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
+import 'Resume.dart';
 import 'constants.dart';
 double screenWidth=0;
 class Interview extends StatefulWidget {
@@ -80,6 +81,8 @@ class _InterviewState extends State<Interview> {
                                               }),
                           Side_bar_element(startspace:0,name:"Resume",imagelink:"assets/icon_assets/resume_icon.png",space:55,operation: (){
                           print("Resume");
+                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Resume()));
                                               }),
                         
                             ],

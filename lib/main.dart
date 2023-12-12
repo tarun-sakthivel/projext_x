@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Home.dart';
+SharedPreferences? prefs;
 
-
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferences.getInstance();
+  prefs = await SharedPreferences.getInstance();
   runApp( MainApp());
 }
 

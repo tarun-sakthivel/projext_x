@@ -59,3 +59,124 @@ SingleChildScrollView(
                         ],
                       ),
                     ),
+
+
+
+
+Container(
+                        width:double.infinity,
+                        color:Colors.transparent,
+                        child:SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          physics:BouncingScrollPhysics(),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                           
+                            children: [
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(right:70),
+                                      child: CircleAvatar(
+                                        backgroundColor: Kgreycolor_light,
+                                        radius:100,
+                                      ),
+                                    ),
+                                    
+                
+                                   Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                       Text("Name",style:Kresumetextstyle,),
+                                    //TEXTEDITOR
+                                    SizedBox(
+                                      height:10
+                                    ),
+                                       Container(
+                                        height:40,
+                                        width: 500,
+                                        decoration: BoxDecoration(borderRadius: KMyborder,color: Kgreycolor_light,),
+                                        
+                                         child: Padding(
+                                           padding: const EdgeInsets.only(left: 15,bottom:5),
+                                           child: TextField(
+                                            controller: Nametexteditor,
+                                            maxLines:1, // Allow unlimited lines in the text field
+                                            decoration: InputDecoration(
+                                              border: InputBorder.none, // Remove default border
+                                              hintText: 'Here...',
+                                            ),
+                                                                             ),
+                                         ),
+                                       ),
+                                       SizedBox(
+                                      height:10
+                                    ),
+                                    Text("Date of Birth",style:Kresumetextstyle,),
+                                    
+                                    //DATE PICKER
+                                    ],
+                                   )
+                
+                
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                             /* Column(
+                                 mainAxisAlignment: MainAxisAlignment.start,
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                   Text("Introduction",style:Kresumetextstyle,),
+                                   //TEXTEDITOR
+                                   SizedBox(
+                                     height:10
+                                   ),
+                                     typingfield(editor: Introtexteditor,h:150),
+                
+                                     Text("Education",style:Kresumetextstyle,),
+                                   //TEXTEDITOR
+                                   SizedBox(
+                                     height:10
+                                   ),
+                                    typingfield(editor: Edutexteditor,h:150),
+                                   SizedBox(
+                                     height:10
+                                   ),
+                
+                
+                                   
+                                   
+                                    
+                
+                
+                
+                
+                                 ],
+                               ),*/
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                               Text("hello",style:TextStyle(fontSize: 40)),
+                              
+                            ],
+                          ),
+                        )
+                      ),

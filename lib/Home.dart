@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_x/Resume.dart';
 
 import 'Interview.dart';
 import 'constants.dart';
@@ -77,6 +78,8 @@ class _HomeState extends State<Home> {
                                               }),
                           Side_bar_element(startspace:0,name:"Resume",imagelink:"assets/icon_assets/resume_icon.png",space:55,operation: (){
                           print("Resume");
+                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Resume()));
                                               }),
                         
                             ],
