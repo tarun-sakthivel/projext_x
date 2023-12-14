@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_x/interviewPage.dart';
 import 'package:project_x/managementPage.dart';
 import 'constants.dart';
 
@@ -108,7 +109,7 @@ class _techinterviewPageState extends State<techinterviewPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const techinterviewPage())); //this is routed to the tech interview page
+                                                    const interviewPage())); //this is routed to the tech interview page
                                       });
                                     }),
                                 Side_bar_element(

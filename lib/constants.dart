@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
-String UserName = 'Tarun';
+String UserName = "Tarun";
 String projectName = "ProjectX";
 Color Kbackgroundcolor = const Color.fromARGB(255, 29, 29, 29);
 Color Ksidebarcolor = const Color.fromARGB(255, 29, 29, 29);
-Color Kmainboard = const Color.fromARGB(255, 255, 255, 255);
+Color Kmainboard = Color.fromARGB(255, 255, 255, 255);
 Color Kblacktextcolor = const Color.fromARGB(255, 29, 29, 29);
-Color Kgreycolor_dark = const Color.fromARGB(255, 161, 161, 161);
+Color Kgreycolor_dark = Color.fromARGB(255, 161, 161, 161);
 Color Kgreycolor_light = const Color.fromARGB(255, 242, 246, 249);
 Color Kgreylinecolor = const Color.fromARGB(255, 194, 194, 194);
-Color kgreencolor = const Color.fromARGB(255, 55, 172, 26);
 Color Kgreytextcolor = const Color.fromARGB(255, 186, 171, 171);
+TextStyle Ktitletextstyle = const TextStyle(
+    fontFamily: "Inter", fontSize: 30, fontWeight: FontWeight.w600);
 
+TextStyle Kcommontextstyle = const TextStyle(
+    fontFamily: "Inter", fontSize: 20, fontWeight: FontWeight.w500);
+TextStyle Kresumetextstyle = const TextStyle(
+    fontFamily: "Inter",
+    fontSize: 20,
+    fontWeight: FontWeight.w800,
+    color: Color.fromARGB(255, 104, 103, 103));
 BorderRadius KMyborder = BorderRadius.circular(10);
 
 class Side_bar_element extends StatelessWidget {

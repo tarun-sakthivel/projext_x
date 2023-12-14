@@ -146,7 +146,7 @@ class _LoginpageState extends State<Loginpage> {
                                     width: 100,
                                     child: Center(
                                       child: Text(
-                                        'Login',
+                                        'Sigin',
                                         style: TextStyle(
                                             fontFamily: 'Inter',
                                             fontSize: 15,
@@ -218,7 +218,8 @@ class _LoginpageState extends State<Loginpage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Signuppage()));
+                                      builder: (context) =>
+                                          const Signuppage()));
                             },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor:

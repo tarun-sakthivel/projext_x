@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
+import 'package:project_x/interviewPage.dart';
+import 'package:project_x/techinterviewPage.dart';
 
 class managementPage extends StatefulWidget {
   const managementPage({super.key});
@@ -107,7 +109,7 @@ class _managementPageState extends State<managementPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const Placeholder())); //this is routed to the tech interview page
+                                                    const interviewPage())); //this is routed to the tech interview page
                                       });
                                     }),
                                 Side_bar_element(

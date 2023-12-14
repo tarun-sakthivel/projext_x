@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
+import 'package:project_x/interviewPage.dart';
 import 'package:project_x/techinterviewPage.dart';
 
 class Signuppage extends StatefulWidget {
@@ -173,7 +174,8 @@ class _SignuppageState extends State<Signuppage> {
                                   height: 52,
                                   width: 380,
                                   decoration: BoxDecoration(
-                                      color: const Color.fromRGBO(232, 232, 232, 1),
+                                      color: const Color.fromRGBO(
+                                          232, 232, 232, 1),
                                       borderRadius: BorderRadius.circular(35)),
                                   child: TextField(
                                     onChanged: (value) => name,
@@ -226,7 +228,8 @@ class _SignuppageState extends State<Signuppage> {
                                   height: 52,
                                   width: 380,
                                   decoration: BoxDecoration(
-                                      color: const Color.fromRGBO(232, 232, 232, 1),
+                                      color: const Color.fromRGBO(
+                                          232, 232, 232, 1),
                                       borderRadius: BorderRadius.circular(35)),
                                   child: TextField(
                                     onChanged: (value) => email,
@@ -282,7 +285,8 @@ class _SignuppageState extends State<Signuppage> {
                                     height: 52,
                                     width: 380,
                                     decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(232, 232, 232, 1),
+                                        color: const Color.fromRGBO(
+                                            232, 232, 232, 1),
                                         borderRadius:
                                             BorderRadius.circular(35)),
                                     child: TextField(
@@ -307,7 +311,8 @@ class _SignuppageState extends State<Signuppage> {
                                           hintStyle: const TextStyle(
                                               fontFamily: 'Inter',
                                               fontSize: 15),
-                                          contentPadding: const EdgeInsets.all(20)),
+                                          contentPadding:
+                                              const EdgeInsets.all(20)),
                                     ),
                                   ),
                                 ),
@@ -322,7 +327,7 @@ class _SignuppageState extends State<Signuppage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const techinterviewPage()));
+                                builder: (context) => const interviewPage()));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:
