@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
 import 'package:project_x/interviewPage.dart';
-import 'package:project_x/techinterviewPage.dart';
 
 class Signinpage extends StatefulWidget {
   const Signinpage({super.key});

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
 import 'package:project_x/interviewPage.dart';
-import 'package:project_x/techinterviewPage.dart';
 
 class Signuppage extends StatefulWidget {
   const Signuppage({super.key});
@@ -327,7 +326,7 @@ class _SignuppageState extends State<Signuppage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const interviewPage()));
+                                builder: (context) => const interviewPage ()));
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:

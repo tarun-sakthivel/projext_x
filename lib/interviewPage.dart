@@ -39,16 +39,16 @@ class _interviewPageState extends State<interviewPage> {
                               fontWeight: FontWeight.bold,
                               color: Kgreytextcolor),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        CircleAvatar(
+                        const CircleAvatar(
                           backgroundColor: Color.fromARGB(255, 57, 57, 57),
                           radius: 40,
                           backgroundImage:
                               AssetImage("assets/image_assets/saaran.png"),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(UserName,
@@ -63,7 +63,7 @@ class _interviewPageState extends State<interviewPage> {
                                 fontSize: 10,
                                 fontWeight: FontWeight.w300,
                                 color: Kgreytextcolor)),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Container(
@@ -85,7 +85,7 @@ class _interviewPageState extends State<interviewPage> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                Placeholder(), //Homepage navigator
+                                                const Placeholder(), //Homepage navigator
                                           ));
                                     }),
                                 Side_bar_element(
@@ -111,7 +111,7 @@ class _interviewPageState extends State<interviewPage> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    interviewPage()));
+                                                    const interviewPage()));
                                       });
                                     }),
                                 Side_bar_element(
@@ -127,7 +127,7 @@ class _interviewPageState extends State<interviewPage> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              Placeholder(), //Resume page
+                                              const Placeholder(), //Resume page
                                         ),
                                       );
                                     }),
@@ -152,7 +152,14 @@ class _interviewPageState extends State<interviewPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Interview", style: Ktitletextstyle),
+                        Text(
+                          "Interview",
+                          style: TextStyle(
+                              fontSize: 42,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                              fontFamily: 'Inter'),
+                        ),
                         Divider(
                           indent: 0,
                           endIndent: 0,
@@ -162,7 +169,7 @@ class _interviewPageState extends State<interviewPage> {
                           child: Container(
                             child: SingleChildScrollView(
                                 scrollDirection: Axis.vertical,
-                                physics: BouncingScrollPhysics(),
+                                physics: const BouncingScrollPhysics(),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,9 +181,9 @@ class _interviewPageState extends State<interviewPage> {
                                             MainAxisAlignment.start,
                                         children: [
                                           FeaturesButton(
-                                              startcolor: Color.fromARGB(
+                                              startcolor: const Color.fromARGB(
                                                   255, 242, 229, 95),
-                                              endcolor: Color.fromARGB(
+                                              endcolor: const Color.fromARGB(
                                                   255, 244, 141, 190),
                                               subtext: "Start your Interview",
                                               maintext: "Technology",
@@ -187,13 +194,13 @@ class _interviewPageState extends State<interviewPage> {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            techinterviewPage()));
+                                                            const techinterviewPage()));
                                                 //NAVIGATOR
                                               }),
                                           FeaturesButton(
-                                              startcolor: Color.fromARGB(
+                                              startcolor: const Color.fromARGB(
                                                   255, 138, 86, 249),
-                                              endcolor: Color.fromARGB(
+                                              endcolor: const Color.fromARGB(
                                                   255, 89, 86, 253),
                                               subtext: "Start your Interview",
                                               maintext: "Management",
@@ -204,13 +211,13 @@ class _interviewPageState extends State<interviewPage> {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            managementPage()));
+                                                            const managementPage()));
                                                 //NAVIGATOR
                                               }),
                                           FeaturesButton(
-                                              startcolor: Color.fromARGB(
+                                              startcolor: const Color.fromARGB(
                                                   255, 249, 19, 19),
-                                              endcolor: Color.fromARGB(
+                                              endcolor: const Color.fromARGB(
                                                   255, 249, 70, 167),
                                               subtext: "Start your Interview",
                                               maintext: "Design",
@@ -245,6 +252,7 @@ class FeaturesButton extends StatelessWidget {
   late String imagepath;
   late Function() operation;
   FeaturesButton({
+    super.key,
     required this.startcolor,
     required this.endcolor,
     required this.subtext,
@@ -267,7 +275,7 @@ class FeaturesButton extends StatelessWidget {
               colors: [startcolor, endcolor],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              stops: [0.0, 1.0],
+              stops: const [0.0, 1.0],
               tileMode: TileMode.clamp,
             ),
             borderRadius: BorderRadius.circular(20),
@@ -285,15 +293,15 @@ class FeaturesButton extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(subtext,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
                             color: Colors.black)),
                     Text(maintext,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 32,
                             fontWeight: FontWeight.w800,
-                            color: const Color.fromARGB(255, 255, 255, 255))),
+                            color: Color.fromARGB(255, 255, 255, 255))),
                   ],
                 ),
                 Expanded(
