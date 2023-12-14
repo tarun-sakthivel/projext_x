@@ -137,182 +137,257 @@ class _techinterviewPageState extends State<techinterviewPage> {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Padding(
-                      padding: const EdgeInsets.all(25.0),
+                      padding: const EdgeInsets.all(18.0),
                       child: Column(
                         children: [
-                          const Row(
-                            children: [
-                              Text(
-                                'Technology Interview',
-                                style: TextStyle(
-                                    fontFamily: 'Inter',
-                                    fontSize: 40,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(width: 200),
-                              //This the place to place a dropdown box
-                            ],
-                          ),
-                          const Divider(
-                            //This is used for creating a divider line
-                            indent: 0,
-                            endIndent: 0,
-                            color: Color.fromARGB(255, 194, 194, 194),
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              //Row for the image asset and the overview paragraph
-                              const SizedBox(
-                                width: 10,
-                              ),
-
-                              const Expanded(
-                                child: SizedBox(
-                                  height: 330,
-                                  width: 513,
-                                  child: Image(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(
-                                          'assets/image_assets/techpgimage.png')),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 120,
-                              ),
-
-                              Column(
-                                //Column created for the overview headin g and the followin g paragraph
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Overview',
-                                    style: TextStyle(
-                                        fontFamily: 'Inter',
-                                        fontSize: 34,
-                                        fontWeight: FontWeight.w400,
-                                        color: Kblacktextcolor),
-                                  ),
-                                  const SizedBox(
-                                    height: 50,
-                                  ),
-                                  screenwidth < 960
-                                      ? Text(
-                                          'Select any one of the \n options given below')
-                                      : Text(
-                                          'Elevate your tech interviews with our cutting-edge\n AI interview app! Seamlessly blend general questions,\n fundamental projects, and technical inquiries to assess\n candidates skills comprehensively. Revolutionize \n       your hiring process for a tech-savvy future.',
+                          screenwidth < 400
+                              ? const Text('ERROR')
+                              : Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Flexible>[
+                                    const Flexible(
+                                      child: SizedBox(
+                                        height: 60,
+                                        width: 900,
+                                        child: Text(
+                                          'Technology Interview',
                                           style: TextStyle(
                                               fontFamily: 'Inter',
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w800,
-                                              color: Kblacktextcolor),
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.bold),
                                         ),
-                                  const SizedBox(
-                                    height: 45,
-                                  ),
-                                ],
-                              )
-                            ],
+                                      ),
+                                    ),
+
+                                    Flexible(
+                                      child: Container(
+                                        //Container for the userprofile dropdown box
+                                        height: 55,
+                                        width: 170,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(35),
+                                            color: const Color.fromARGB(
+                                                255, 236, 244, 244)),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            const CircleAvatar(
+                                              backgroundColor:
+                                                  Color.fromRGBO(93, 93, 93, 1),
+                                            ),
+                                            Text(
+                                              UserName,
+                                              style: const TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            PopupMenuButton(
+                                              itemBuilder: (context) => [
+                                                const PopupMenuItem(
+                                                  child: Column(
+                                                    children: <Widget>[
+                                                      //Items to add in the dropdown box
+                                                      Icon(
+                                                        Icons.downhill_skiing,
+                                                        size: 24,
+                                                        color: Color.fromRGBO(
+                                                            93, 93, 93, 1),
+                                                      )
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                              child: const Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_outlined,
+                                                  size: 38,
+                                                  color: Color.fromRGBO(
+                                                      93, 93, 93, 1)),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+
+                                    //This the place to place a dropdown box
+                                  ],
+                                ),
+                          Container(
+                            child: const Divider(
+                              //This is used for creating a divider line
+                              indent: 0,
+                              endIndent: 0,
+                              color: Color.fromARGB(255, 194, 194, 194),
+                            ),
                           ),
+                          const SizedBox(height: 10),
+                          screenwidth < 300
+                              ? const Text('Expand to \n know more')
+                              : Container(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //Row for the image asset and the overview paragraph
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Expanded(
+                                        child: SizedBox(
+                                          height: 330,
+                                          width: 513,
+                                          child: Image(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  'assets/image_assets/techpgimage.png')),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 120,
+                                      ),
+
+                                      screenwidth < 872
+                                          ? const Column()
+                                          : Column(
+                                              //Column created for the overview headin g and the followin g paragraph
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Overview',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 34,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Kblacktextcolor),
+                                                ),
+                                                const SizedBox(
+                                                  height: 50,
+                                                ),
+                                                Text(
+                                                  'Elevate your tech interviews with our cutting-edge\n AI interview app! Seamlessly blend general questions,\n fundamental projects, and technical inquiries to assess\n candidates skills comprehensively. Revolutionize \n       your hiring process for a tech-savvy future.',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Inter',
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      color: Kblacktextcolor),
+                                                ),
+                                                const SizedBox(
+                                                  height: 45,
+                                                ),
+                                              ],
+                                            )
+                                    ],
+                                  ),
+                                ),
                           const SizedBox(
                             height: 55,
                           ),
-                          Text(
+                          const Text(
                             'Choose the interview type ?',
                             style: TextStyle(
                                 fontSize: 24,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w500),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                //This is the conatiner that contains navigator button for the text based interview type
-                                child: MyElevatedButton(
-                                  onPressed: () {},
-                                  width:
-                                      260, //Place to set the router to the text based page
-                                  child: const Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Text Based',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: 'Inter',
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
+                          screenwidth < 830
+                              ? const Column()
+                              : Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    Container(
+                                      //This is the conatiner that contains navigator button for the text based interview type
+                                      child: MyElevatedButton(
+                                        onPressed: () {},
+                                        width:
+                                            260, //Place to set the router to the text based page
+                                        child: const Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Text Based',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Image(
+                                                image: AssetImage(
+                                                    'assets/image_assets/text.png'))
+                                          ],
+                                        ),
                                       ),
-                                      SizedBox(
-                                        width: 20,
+                                    ),
+                                    const SizedBox(
+                                      //space between the two buttons
+                                      width: 50,
+                                    ),
+                                    Container(
+                                      //This is the container that contains the button for the voice and text navigator button
+                                      child: MyElevatedButton(
+                                        onPressed: () {},
+                                        width:
+                                            260, //Place to set the router to the voice and text based page
+                                        child: const Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Video and Voice \n        based',
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontFamily: 'Inter',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                            Image(
+                                                image: AssetImage(
+                                                    'assets/image_assets/voice.png'))
+                                          ],
+                                        ),
                                       ),
-                                      Image(
-                                          image: AssetImage(
-                                              'assets/image_assets/text.png'))
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(
-                                //space between the two buttons
-                                width: 50,
-                              ),
-                              Container(
-                                //This is the container that contains the button for the voice and text navigator button
-                                child: MyElevatedButton(
-                                  onPressed: () {},
-                                  width:
-                                      260, //Place to set the router to the voice and text based page
-                                  child: const Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Video and Voice \n        based',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: 'Inter',
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                      SizedBox(
-                                        width: 2,
-                                      ),
-                                      Image(
-                                          image: AssetImage(
-                                              'assets/image_assets/voice.png'))
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 300,
-                              ),
-                              Flexible(
-                                child: Text(
-                                  'Recommended',
-                                  style: TextStyle(
-                                      fontSize: 23,
-                                      fontFamily: 'Inter',
-                                      color: Color.fromRGBO(157, 157, 157, 1)),
-                                ),
-                              ),
-                            ],
-                          )
+                          screenwidth < 840
+                              ? const Column()
+                              : const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      width: 300,
+                                    ),
+                                    Text(
+                                      'Recommended',
+                                      style: TextStyle(
+                                          fontSize: 23,
+                                          fontFamily: 'Inter',
+                                          color:
+                                              Color.fromRGBO(157, 157, 157, 1)),
+                                    ),
+                                  ],
+                                )
                         ],
                       ),
                     ),
