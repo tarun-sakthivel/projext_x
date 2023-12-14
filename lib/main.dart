@@ -1,14 +1,19 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Home.dart';
+late List<CameraDescription> cameras;
+late CameraController cameraController;
 SharedPreferences? prefs;
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPreferences.getInstance();
   prefs = await SharedPreferences.getInstance();
+  
+
   runApp( MainApp());
 }
 

@@ -180,3 +180,40 @@ Container(
                           ),
                         )
                       ),
+
+
+
+
+
+
+
+                      SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        physics: AlwaysScrollableScrollPhysics(),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (int i = 0; i < questions.length; i++)
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(20, 13, 20, 13),
+                                child: QuestionWidget(
+                                  index: i,
+                                  question: questions[i],
+                                  controller: controllers[i],
+                                ),
+                              ),
+                            ElevatedButton(
+                              onPressed: () {
+                                List<String> answers = []; // List to store all answers
+                                for (int i = 0; i < controllers.length; i++) {
+                                  answers.add(controllers[i].text); // Add user input to answers list
+                                }
+                                // Process the collected answers here (e.g., save them to a database)
+                                print(answers);
+                              },
+                              child: Text("Submit Answers"),
+                            ),
+                          ],
+                        ),
+                      ),

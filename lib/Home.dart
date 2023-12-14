@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/Resume.dart';
+import 'package:project_x/Text_interview.dart';
 
 import 'Interview.dart';
 import 'constants.dart';
@@ -239,7 +240,7 @@ class _HomeState extends State<Home> {
                                       GestureDetector(
                                         onTap:(){
                                           Navigator.pop(context);
-                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Interview()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Textinterview()));
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.fromLTRB(0, 0, 6, 0),

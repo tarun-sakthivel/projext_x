@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:project_x/Text_interview.dart';
+import 'package:project_x/Interview.dart';
 
 import 'Home.dart';
 import 'Resume.dart';
 import 'constants.dart';
 double screenWidth=0;
-class Interview extends StatefulWidget {
+class Report extends StatefulWidget {
   
 
   @override
-  State<Interview> createState() => _InterviewState();
+  State<Report> createState() => _ReportState();
 }
 
-class _InterviewState extends State<Interview> {
+class _ReportState extends State<Report> {
  
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class _InterviewState extends State<Interview> {
                           child: Column(
                             children: [
                           Side_bar_element(startspace:1,name: "Dashboard",imagelink:"assets/icon_assets/home_icon.png",space:45,operation: (){
-                          print("Interview");
+                          print("Report");
                           Navigator.pop(context);//POPPING THE CURRENT PAGE AND NAVIGATING TO NEEW
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
                           }),
@@ -73,11 +73,11 @@ class _InterviewState extends State<Interview> {
                           Side_bar_element(startspace:6.5,name:"Developers",imagelink:"assets/icon_assets/dev_icon.png",space:44.5,operation: (){
                           print("Developers");
                                               }),
-                          Side_bar_element(startspace:0,name:"Interview",imagelink:"assets/icon_assets/tie_side_icon.png",space:52.5,operation: (){
-                          print("INterview");
+                          Side_bar_element(startspace:0,name:"Report",imagelink:"assets/icon_assets/tie_side_icon.png",space:52.5,operation: (){
+                          print("Report");
                           setState(() {
                            Navigator.pop(context);
-                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Interview()));
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Report()));
                           });
                                               }),
                           Side_bar_element(startspace:0,name:"Resume",imagelink:"assets/icon_assets/resume_icon.png",space:55,operation: (){
@@ -103,80 +103,39 @@ class _InterviewState extends State<Interview> {
                 height:double.infinity,
                 decoration: BoxDecoration(color:Kmainboard,
                 borderRadius: KMyborder),
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Interview",style:Ktitletextstyle),
-
-          Divider(
-           indent: 0,
-           endIndent: 0,
-           color: Kgreylinecolor,
-          ),
-
-          Expanded(
-            child: Container(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                physics:BouncingScrollPhysics() ,
-                child:Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                     SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            
-                              FeaturesButton(startcolor: Color.fromARGB(255, 242, 229, 95),
-                                endcolor:Color.fromARGB(255, 244, 141, 190) ,
-                                subtext: "Start your Interview",
-                                maintext: "Technology",
-                                imagepath:"assets/icon_assets/technology.png",
-                                operation: (){
-                                    //NAVIGATOR
-                                    
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Textinterview()));
-                                }
-                              ),
-                              FeaturesButton(startcolor: Color.fromARGB(255, 138, 86, 249),
-                                endcolor:Color.fromARGB(255, 89, 86, 253) ,
-                                subtext: "Start your Interview",
-                                maintext: "Management",
-                                imagepath:"assets/icon_assets/managment.png",
-                                operation: (){
-                                  //NAVIGATOR
-                                }
-                              ),
-                              FeaturesButton(startcolor: Color.fromARGB(255, 249, 19, 19),
-                                endcolor:Color.fromARGB(255, 249, 70, 167) ,
-                                subtext: "Start your Interview",
-                                maintext: "Design",
-                                imagepath:"assets/icon_assets/design.png",
-                                operation: (){
-                                  //NAVIGATOR
-                                }
-                              ),
-                              
-                          ],
-                        ),
+                child: Container(
+                height: double.infinity,
                 
-                      ),
-                   
-                    
-                 
-                  ],
-                )
-              ),
-            ),
-          )
-        ],
-      ),
+                decoration: BoxDecoration(color: Kmainboard,borderRadius: KMyborder),
+
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                
+                    children: [
+                      Row(children: [
+                        IconButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Interview()));
+
+                        }, icon: Icon(Icons.arrow_back_ios_new_outlined,size: 40,),),
+                        SizedBox(width: 20,),
+                        Text("Interview",style: Ktitletextstyle,),
+
+                      
+                      
+                      ]),
+                      Divider(
+                        indent: 0,
+                        endIndent: 0,
+                      )
+                      
+                    ],
+                  ),
                 ),
+                
+              ),
                 
               ),
            ),
