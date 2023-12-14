@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_x/managementPage.dart';
 import 'constants.dart';
 
 class techinterviewPage extends StatefulWidget {
@@ -340,7 +341,13 @@ class _techinterviewPageState extends State<techinterviewPage> {
                                     Container(
                                       //This is the container that contains the button for the voice and text navigator button
                                       child: MyElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const managementPage()));
+                                        },
                                         width:
                                             260, //Place to set the router to the voice and text based page
                                         child: const Row(
