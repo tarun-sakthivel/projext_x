@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_x/Resume.dart';
-import 'package:project_x/Text_interview.dart';
 
 import 'Interview.dart';
 import 'constants.dart';
@@ -43,7 +42,7 @@ class _HomeState extends State<Home> {
                       CircleAvatar(
                         backgroundColor: Color.fromARGB(255, 57, 57, 57),
                         radius: 40,
-                        backgroundImage: AssetImage("assets/image_assets/user.png"),
+                        backgroundImage: AssetImage("assets/icon_assets/job_user.png"),
                       
                       ),
                       SizedBox(
@@ -240,7 +239,7 @@ class _HomeState extends State<Home> {
                                       GestureDetector(
                                         onTap:(){
                                           Navigator.pop(context);
-                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Textinterview()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Interview()));
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.fromLTRB(0, 0, 6, 0),

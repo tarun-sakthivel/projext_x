@@ -9,10 +9,12 @@ Color Kgreycolor_dark = Color.fromARGB(255, 161, 161, 161);
 Color Kgreycolor_light = const Color.fromARGB(255, 242, 246, 249);
 Color Kgreylinecolor = const Color.fromARGB(255, 194, 194, 194);
 Color Kgreytextcolor = const Color.fromARGB(255, 186, 171, 171);
+Color Kprogressbarbackgroundcolor = Color.fromARGB(255, 230, 230, 230);
 TextStyle Ktitletextstyle = const TextStyle(fontFamily: "Inter",fontSize: 30,fontWeight: FontWeight.bold);
 TextStyle Kcommontextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w500);
 TextStyle Kresumetextstyle = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight:FontWeight.w800,color: Color.fromARGB(255, 104, 103, 103));
-
+TextStyle Kprogressbarnumber = const TextStyle(fontFamily: "Inter",fontSize: 20,fontWeight: FontWeight.w800,color: Colors.black);
+TextStyle Kreporttextstyle = const  TextStyle(fontFamily: "Inter",fontWeight: FontWeight.w400,color: Colors.black,fontSize: 23);
 //profile image for the user 
 //picking the image from the file using the some modules
 

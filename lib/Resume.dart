@@ -101,7 +101,7 @@ DateTime _dateTime = DateTime.now();
                       CircleAvatar(
                         backgroundColor: Color.fromARGB(255, 57, 57, 57),
                         radius: 40,
-                        backgroundImage: AssetImage("assets/image_assets/user.png"),
+                        backgroundImage: AssetImage("assets/icon_assets/job_user.png"),
                       
                       ),
                       SizedBox(
@@ -254,7 +254,7 @@ DateTime _dateTime = DateTime.now();
                                               border: InputBorder.none, // Remove default border
                                               hintText: 'Type your Name...',
                                             ),
-                                                                             ),
+                                         ),
                                          ),
                                        ),
                                        SizedBox(

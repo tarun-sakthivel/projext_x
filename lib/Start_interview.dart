@@ -18,6 +18,7 @@ class _StartinterviewState extends State<Startinterview> {
   @override
   void initState(){
     super.initState();
+    WidgetsFlutterBinding.ensureInitialized();
     
   }
 
@@ -99,41 +100,49 @@ class _StartinterviewState extends State<Startinterview> {
   }
 }
 
-
 class CameraPage extends StatefulWidget {
   @override
   State<CameraPage> createState() => _CameraPageState();
 }
+
 class _CameraPageState extends State<CameraPage> {
- late  List<CameraDescription> cameras;
- late CameraController cameraController;
+  
+  late CameraController cameraController ;
 
-  @override
-  void initState() {
-    super.initState();
-    cameraController = CameraController(cameras[1], ResolutionPreset.medium);
-    initializeCamera();
-  }
-
-  Future<void> initializeCamera() async {
+ @override
+void initState() {
+  super.initState();
+  initializeCamera();
+}
+Future<void> initializeCamera() async {
+  try {
+    print("=====================================================");
+    print("checking the aviable cameras");
+    final List<CameraDescription> cameras = await availableCameras();
+    print("hi");
+    print(cameras);
+    final cameraController =
+        CameraController(cameras.first, ResolutionPreset.medium);
     await cameraController.initialize();
-    if (mounted) {
-      setState(() {});
-    }
+    // You can dispose the controller here if needed
+    // cameraController.dispose();
+  } catch (e) {
+    print("Error initializing camera: $e");
   }
+}
+
 
   @override
-  void dispose() {
-    cameraController.dispose();
+
+  
+void dispose() {
+    cameraController?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!cameraController.value.isInitialized) {
-      return Center(child: CircularProgressIndicator());
-    }
-    return Scaffold(
+      return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
@@ -144,7 +153,7 @@ class _CameraPageState extends State<CameraPage> {
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: CameraPreview(cameraController),
+              child: CameraPreview(cameraController!),
             ),
             // Your other widgets here
           ],
@@ -153,4 +162,3 @@ class _CameraPageState extends State<CameraPage> {
     );
   }
 }
-

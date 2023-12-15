@@ -1,11 +1,9 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:project_x/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Home.dart';
-late List<CameraDescription> cameras;
-late CameraController cameraController;
+import 'Report.dart';
+
 SharedPreferences? prefs;
 
 void main()async {
@@ -26,7 +24,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Kbackgroundcolor,
       home: Scaffold(
-        body: Home(),
+        body: Report(),
       ),
     );
   }

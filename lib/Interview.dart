@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_x/Text_interview.dart';
+import 'package:project_x/Start_interview.dart';
 
 import 'Home.dart';
 import 'Resume.dart';
@@ -13,6 +13,7 @@ class Interview extends StatefulWidget {
 }
 
 class _InterviewState extends State<Interview> {
+  @override
  
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class _InterviewState extends State<Interview> {
                       CircleAvatar(
                         backgroundColor: Color.fromARGB(255, 57, 57, 57),
                         radius: 40,
-                        backgroundImage: AssetImage("assets/image_assets/saaran.png"),
+                        backgroundImage: AssetImage("assets/icon_assets/job_user.png"),
                       
                       ),
                       SizedBox(
@@ -140,7 +141,7 @@ class _InterviewState extends State<Interview> {
                                 operation: (){
                                     //NAVIGATOR
                                     
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Textinterview()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Startinterview()));
                                 }
                               ),
                               FeaturesButton(startcolor: Color.fromARGB(255, 138, 86, 249),
