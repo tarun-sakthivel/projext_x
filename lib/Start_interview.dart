@@ -1,12 +1,15 @@
+
 import 'package:camera/camera.dart';
 import  "package:flutter/material.dart";
 import "package:project_x/Report.dart";
+import "package:project_x/nocamera.dart";
 
 import "constants.dart";
+import "main.dart";
 
-
+late CameraController cameraController;
 class Startinterview extends StatefulWidget {
-  const Startinterview({super.key});
+  
 
   @override
   State<Startinterview> createState() => _StartinterviewState();
@@ -14,20 +17,65 @@ class Startinterview extends StatefulWidget {
 
 class _StartinterviewState extends State<Startinterview> {
   
-  
   @override
   void initState(){
+    try{
+      dispose();
+
+    }catch(e){
+
+    }
     super.initState();
-    WidgetsFlutterBinding.ensureInitialized();
+    try{
+      cameraController = CameraController(cameras[0], ResolutionPreset.ultraHigh);
+      cameraController.initialize().then((_){
+      if (!mounted){
+        return;
+      }
+      setState(() {
+        
+      });
+    }).catchError((Object e){
+      if(e is CameraException){
+        switch(e.code){
+          case "CameraAccessDenied":
+          print("User denied camera access.");
+          showErrorDialog(context, "User denied camera access.");
+          break;
+          default:
+          print("handle other errors.");
+          showErrorDialog(context, "An error occurred: ${e.code}\nTry restrating the app");
+          break;
+        }
+      }
+    });
+    }
+    catch(e){
+      print("no camera is found in the computer, ${e}");
+    }
     
+    
+    }
+
+
+     @override
+  void dispose() {
+    cameraController.dispose();
+    super.dispose();
   }
 
+    
 
 
   
   
   @override
   Widget build(BuildContext context) {
+    if (cameras.isEmpty){
+      
+      return Nocamera();
+    }
+    
     return Scaffold(
       backgroundColor: Kbackgroundcolor,
       body:Padding(
@@ -63,12 +111,36 @@ class _StartinterviewState extends State<Startinterview> {
                       ),
 
                       //video container
+                      if (!cameraController.value.isInitialized)
+                      
                       Expanded(
                         child: Container(
-                          child: CameraPage(),
-                          
+                          width:double.infinity,
+                          height:double.infinity,
+                          color: Colors.transparent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircularProgressIndicator(),
+
+                              Padding(
+                                padding: const EdgeInsets.only(top:10),
+                                child: Text("If it take time try restarting the app",style: Kcommontextstyle,),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
+                      if (cameraController.value.isInitialized)
+                      Expanded(
+                        child: Center(
+                          child: Container(
+                            child:CameraPreview(cameraController),
+                          ),
+                        )),
+
+                      
                       SizedBox(
                         height:30
                       ),            //HERE THE VIDEO CONTAINER SHOUL BE THERE
@@ -100,65 +172,26 @@ class _StartinterviewState extends State<Startinterview> {
   }
 }
 
-class CameraPage extends StatefulWidget {
-  @override
-  State<CameraPage> createState() => _CameraPageState();
-}
-
-class _CameraPageState extends State<CameraPage> {
-  
-  late CameraController cameraController ;
-
- @override
-void initState() {
-  super.initState();
-  initializeCamera();
-}
-Future<void> initializeCamera() async {
-  try {
-    print("=====================================================");
-    print("checking the aviable cameras");
-    final List<CameraDescription> cameras = await availableCameras();
-    print("hi");
-    print(cameras);
-    final cameraController =
-        CameraController(cameras.first, ResolutionPreset.medium);
-    await cameraController.initialize();
-    // You can dispose the controller here if needed
-    // cameraController.dispose();
-  } catch (e) {
-    print("Error initializing camera: $e");
-  }
-}
 
 
-  @override
 
-  
-void dispose() {
-    cameraController?.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-      return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: CameraPreview(cameraController!),
+  void showErrorDialog(BuildContext context, String errorMessage) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Error"),
+          content: Text(errorMessage),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+              child: Text("OK"),
             ),
-            // Your other widgets here
           ],
-        ),
-      ),
+        );
+      },
     );
   }
-}

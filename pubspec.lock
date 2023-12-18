@@ -37,26 +37,26 @@ packages:
     dependency: transitive
     description:
       name: camera_android
-      sha256: b63304d553dde613ca68fb40aaa76bbbcdbd051683bdbf2019671ec8d9645ce7
+      sha256: "7215e38fa0be58cc3203a6e48de3636fb9b1bf93d6eeedf667f882d51b3a4bf3"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.8+14"
+    version: "0.10.8+15"
   camera_avfoundation:
     dependency: transitive
     description:
       name: camera_avfoundation
-      sha256: "3b6d9f550cfd658c71f34a99509528501e5e5d4fa79f11e3a4d6ef380d8e0254"
+      sha256: "3c8dd395f18722f01b5f325ddd7f5256e9bcdce538fb9243b378ba759df3283c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.13+7"
+    version: "0.9.13+8"
   camera_platform_interface:
     dependency: transitive
     description:
       name: camera_platform_interface
-      sha256: "86fd4fc597c6e455265ddb5884feb352d0171ad14b9cdf3aba30da59b25738c4"
+      sha256: b6a568984254cadaca41a6b896d87d3b2e79a2e5791afa036f8d524c6783b93a
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.0"
+    version: "2.7.0"
   camera_web:
     dependency: transitive
     description:
@@ -65,6 +65,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.2+3"
+  camera_windows:
+    dependency: "direct main"
+    description:
+      name: camera_windows
+      sha256: "128ed4d05ec4da10e1be977e8b37940db607a9d832250ca5fb52d9fa78c72037"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1+8"
   characters:
     dependency: transitive
     description:

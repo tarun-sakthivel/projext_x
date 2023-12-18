@@ -310,35 +310,7 @@ class _ReportState extends State<Report> {
                                       },
                                     ),
                                   ),*/
-                                Container(
-                                  width:double.infinity,
-                                  height:2000,
-                                  
-                                  child: ListView.builder(
-                                  itemCount: question.length,
-                                  itemBuilder: (context, index) {
-                                    return Padding(
-                                      padding: const EdgeInsets.only(bottom:15,top:15),
-                                      child: Container(
-                                        color: Kgreycolor_light,
-                                        padding: const EdgeInsets.all(10.0),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text(question[index], style: TextStyle(fontFamily: "Inter", fontSize: 25, fontWeight: FontWeight.w600)),
-                                            SizedBox(height: 10),
-                                            Text(answer[index], style: Kcommontextstyle),
-                                            SizedBox(height: 20),
-                                            Text("FEEDBACK", style: TextStyle(fontFamily: "Inter", fontSize: 25, fontWeight: FontWeight.w600)),
-                                            SizedBox(height: 10),
-                                            Text(feedback[index], style: Kcommontextstyle),
-                                          ],
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                                              ),
-                                ),
+                                
                                   
 
 
@@ -404,9 +376,37 @@ class _ReportState extends State<Report> {
 
 
                                   ],
-                                )
+                                ),
                                 
-                                
+                                Container(
+                                  width:double.infinity,
+                                  height:2000,
+                                  
+                                  child: ListView.builder(
+                                  itemCount: question.length,
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.only(bottom:15,top:15),
+                                      child: Container(
+                                        color: Kgreycolor_light,
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(question[index], style: TextStyle(fontFamily: "Inter", fontSize: 25, fontWeight: FontWeight.w600)),
+                                            SizedBox(height: 10),
+                                            Text(answer[index], style: Kcommontextstyle),
+                                            SizedBox(height: 20),
+                                            Text("FEEDBACK", style: TextStyle(fontFamily: "Inter", fontSize: 25, fontWeight: FontWeight.w600)),
+                                            SizedBox(height: 10),
+                                            Text(feedback[index], style: Kcommontextstyle),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                                              ),
+                                ),
                               ],
 
                             ),
