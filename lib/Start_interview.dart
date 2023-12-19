@@ -3,9 +3,18 @@ import 'package:camera/camera.dart';
 import  "package:flutter/material.dart";
 import "package:project_x/Report.dart";
 import "package:project_x/nocamera.dart";
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 import "constants.dart";
 import "main.dart";
+bool ispressed = false;
+SpeechToText _speechToText = SpeechToText();
+  bool _speechEnabled = false;
+  String _lastWords = '';
+
+
+
 
 late CameraController cameraController;
 class Startinterview extends StatefulWidget {
@@ -19,12 +28,16 @@ class _StartinterviewState extends State<Startinterview> {
   
   @override
   void initState(){
+   
+    _initSpeech();
     try{
       dispose();
 
     }catch(e){
 
     }
+    
+    
     super.initState();
     try{
       cameraController = CameraController(cameras[0], ResolutionPreset.ultraHigh);
@@ -56,6 +69,36 @@ class _StartinterviewState extends State<Startinterview> {
     
     
     }
+
+
+    void _initSpeech() async {
+    _speechEnabled = await _speechToText.initialize();
+    setState(() {});
+  }
+
+  /// Each time to start a speech recognition session
+  void _startListening() async {
+    await _speechToText.listen(onResult: _onSpeechResult);
+    setState(() {});
+  }
+
+  /// Manually stop the active speech recognition session
+  /// Note that there are also timeouts that each platform enforces
+  /// and the SpeechToText plugin supports setting timeouts on the
+  /// listen method.
+  void _stopListening() async {
+    await _speechToText.stop();
+    setState(() {});
+  }
+
+  /// This is the callback that the SpeechToText plugin calls when
+  /// the platform returns recognized words.
+  void _onSpeechResult(SpeechRecognitionResult result) {
+    setState(() {
+      _lastWords = result.recognizedWords;
+    });
+  }
+
 
 
      @override
@@ -147,18 +190,40 @@ class _StartinterviewState extends State<Startinterview> {
                       Center(
                         child: ElevatedButton(
                                     
-                                    style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 211, 45, 4),
+                                    style:ispressed == false ?ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 50, 213, 6),
+                                    minimumSize: Size(150, 80),
+                                    onSurface: Colors.yellow,)
+                                    : ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 211, 45, 4),
                                     minimumSize: Size(150, 80),
                                     onSurface: Colors.yellow,),
                                     onPressed: ()async{
+                                    if (ispressed == true){
+                                      print("recorder finished");
+                                      print(ispressed);
+                                      _stopListening();
+                                      print(_lastWords);
+                                      dispose();
                                      Navigator.pop(context);
+                                     
                                      Navigator.push(context, MaterialPageRoute(builder: ((context) => Report())));
                                      
+                                    }
+
+                                    if (ispressed == false)
+                                      print("recording started");
+                                      print(ispressed);
+                                      _startListening();
+                                     ispressed = true;
+
+                                    
                                 
                                 
                                   },
                                   
-                                child: Text("Stop",style: TextStyle(fontFamily: "Inter",
+                                child:ispressed ==false? Text("Start",style: TextStyle(fontFamily: "Inter",
+                                  fontSize: 20,fontWeight: FontWeight.w600,
+                                  color:Colors.white),):
+                                   Text("Stop",style: TextStyle(fontFamily: "Inter",
                                   fontSize: 20,fontWeight: FontWeight.w600,
                                   color:Colors.white),)),
                       ),
